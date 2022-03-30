@@ -7,9 +7,15 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script>
+			function LoadData(){
+				localStorage.getItem("Article");
+			}
+			
+		</script>
 	</head>
 	
-	<body>
+	<body onload="LoadData()">
 		<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 			<div class="container">
 				<a class="navbar-brand" href="https://faradars.org"><img src="img/logo.png" width="40"></a>

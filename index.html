@@ -3,10 +3,17 @@
 		<meta charset="utf-8">
 		<link href="css/bootstrap.min.css" rel="stylesheet">
 		<link href="style.css" rel="stylesheet">
-		
+
 		<script src="js/jquery.min.js"></script>
 		<script src="js/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
+		<script>
+			function ReadMoreClicked(readMore){
+				var clickedArticle=readMore.id;
+				localStorage.setItem("Article",clickedArticle);
+			}
+
+		</script>
 	</head>
 	
 	<body>
@@ -38,7 +45,7 @@
 						<div class="card-body">
 							<h5 class="card-title">HTML</h5>
 							<p class="card-text">The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript.</p>
-								<a href="single.html" class="btn btn-info" style="float: right;" >Read more</a>
+							<a href="single.html" class="btn btn-info" style="float: right;" id="html" onclick="ReadMoreClicked(this)">Read more</a>
 						</div>
 						<div class="card-footer text-muted">
 							Published : 26 March 2021
@@ -49,7 +56,7 @@
 						<div class="card-body">
 							<h5 class="card-title">CSS</h5>
 							<p class="card-text">Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
-								<a href="single.html" class="btn btn-info" style="float: right;">Read more</a>
+							<a href="single.html" class="btn btn-info" style="float: right;"  id="css" onclick="ReadMoreClicked(this)">Read more</a>
 						</div>
 						<div class="card-footer text-muted">
 							Published : 26 March 2021
@@ -60,7 +67,7 @@
 						<div class="card-body">
 							<h5 class="card-title">JavaScript</h5>
 							<p class="card-text">JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Over 97% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries.</p>
-								<a href="single.html" class="btn btn-info" style="float: right;">Read more</a>
+								<a href="single.html" class="btn btn-info" style="float: right;" id="javascript" onclick="ReadMoreClicked(this)">Read more</a>
 						</div>
 						<div class="card-footer text-muted">
 							Published : 26 March 2021
