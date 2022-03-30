@@ -9,7 +9,9 @@
 		<script src="js/bootstrap.min.js"></script>
 		<script>
 			function LoadData(){
-				localStorage.getItem("Article");
+				var Article = localStorage.getItem("Article");
+				document.getElementById("selected").innerText=Article;
+				document.getElementById(Article).style.display='block';
 			}
 			
 		</script>
@@ -40,25 +42,66 @@
 					<ul class="breadcrumb mt-5">
 						<li class="breadcrumb-item"><a href="index.html">Home</a></li>
 						<li class="breadcrumb-item"><a href="index.html">Web programming</a></li>
-						<li class="breadcrumb-item active">HTML</li>
+						<li class="breadcrumb-item active" id="selected">Article</li>
 					</ul>
-						<div class="card mb-4">
-						<img src="img/HTML.jpg" class="card-img-top">
-						<div class="card-body">
-					<h5 class="card-title">HTML</h5>
-					<p class="card-text">
-					<p>The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p>
-					<p>Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</p>
-					<p>HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. Tags such as "img" and "input" directly introduce content into the page. Other tags such as <p> surround and provide information about document text and may include other tags as sub-elements. Browsers do not display the HTML tags but use them to interpret the content of the page.</p>
-					<p>HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages. Inclusion of CSS defines the look and layout of content. The World Wide Web Consortium (W3C), former maintainer of the HTML and current maintainer of the CSS standards, has encouraged the use of CSS over explicit presentational HTML since 1997. A form of HTML, known as HTML5, is used to display video and audio, primarily using the "canvas" element, in collaboration with javascript.</p>
-					</p>
-				
-				</div>
-				<div class="card-footer text-muted">
+
+
+
+
+				<div class="card mb-4" id="HTML" style="display: none;">
+					<img src="img/HTML.jpg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">HTML</h5>
+						<p class="card-text">
+							<p>The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets (CSS) and scripting languages such as JavaScript.</p>
+							<p>Web browsers receive HTML documents from a web server or from local storage and render the documents into multimedia web pages. HTML describes the structure of a web page semantically and originally included cues for the appearance of the document.</p>
+							<p>HTML elements are the building blocks of HTML pages. With HTML constructs, images and other objects such as interactive forms may be embedded into the rendered page. HTML provides a means to create structured documents by denoting structural semantics for text such as headings, paragraphs, lists, links, quotes and other items. HTML elements are delineated by tags, written using angle brackets. Tags such as "img" and "input" directly introduce content into the page. Other tags such as <p> surround and provide information about document text and may include other tags as sub-elements. Browsers do not display the HTML tags but use them to interpret the content of the page.</p>
+							<p>HTML can embed programs written in a scripting language such as JavaScript, which affects the behavior and content of web pages. Inclusion of CSS defines the look and layout of content. The World Wide Web Consortium (W3C), former maintainer of the HTML and current maintainer of the CSS standards, has encouraged the use of CSS over explicit presentational HTML since 1997. A form of HTML, known as HTML5, is used to display video and audio, primarily using the "canvas" element, in collaboration with javascript.</p>
+						</p>
+					</div>
+					<div class="card-footer text-muted">
 					Published : 26 March 2021 | Author : <a href="#">Ali Qavi</a>
-				</div>
+					</div>
 				</div>	
+
+
+				<div class="card mb-4" id="CSS" style="display: none;">
+					<img src="img/css.jpg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">CSS</h5>
+						<p class="card-text">
+							<p>Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
+							<p>CSS is designed to enable the separation of presentation and content, including layout, colors, and fonts. This separation can improve content accessibility; provide more flexibility and control in the specification of presentation characteristics; enable multiple web pages to share formatting by specifying the relevant CSS in a separate. CSS file, which reduces complexity and repetition in the structural content; and enable the. CSS file to be cached to improve the page load speed between the pages that share the file and its formatting.</p>
+							<p>Separation of formatting and content also makes it feasible to present the same markup page in different styles for different rendering methods, such as on-screen, in print, by voice (via speech-based browser or screen reader), and on Braille-based tactile devices. CSS also has rules for alternate formatting if the content is accessed on a mobile device.</p>
+							<p>The name cascading comes from the specified priority scheme to determine which style rule applies if more than one rule matches a particular element. This cascading priority scheme is predictable.</p>
+						</p>
+					</div>
+					<div class="card-footer text-muted">
+					Published : 26 March 2021 | Author : <a href="#">Ali Qavi</a>
+					</div>
+				</div>	
+
+
+				<div class="card mb-4" id="JavaScript" style="display: none;">
+					<img src="img/javascript.jpg" class="card-img-top">
+					<div class="card-body">
+						<h5 class="card-title">JavaScript</h5>
+						<p class="card-text">
+							<p>JavaScript often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Over 97% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries. All major web browsers have a dedicated JavaScript engine to execute the code on users' devices.</p>
+							<p>JavaScript is a high-level, often just-in-time compiled language that conforms to the ECMAScript standard. It has dynamic typing, prototype-based object-orientation, and first-class functions. It is multi-paradigm, supporting event-driven, functional, and imperative programming styles. It has application programming interfaces (APIs) for working with text, dates, regular expressions, standard data structures, and the Document Object Model (DOM).</p>
+							<p>The ECMAScript standard does not include any input/output (I/O), such as networking, storage, or graphics facilities. In practice, the web browser or other runtime system provides JavaScript APIs for I/O.</p>
+							<p>JavaScript engines were originally used only in web browsers, but are now core components of some servers and a variety of applications. The most popular runtime system for this usage is Node.js.</p>
+							<p>Although Java and JavaScript are similar in name, syntax, and respective standard libraries, the two languages are distinct and differ greatly in design.</p>
+						</p>
+					</div>
+					<div class="card-footer text-muted">
+					Published : 26 March 2021 | Author : <a href="#">Ali Qavi</a>
+					</div>
 				</div>
+
+
+
+			</div>
 				<div class="col-md-4">
 					<div class="card mt-5">
 						<h5 class="card-header">Search</h5>
