@@ -8,17 +8,49 @@
 		<script src="js/popper.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script>
+			var PageNumber=1;
+			var MaxPage=2;
+			var ArticleArray=["HTMLArticle","CSSArticle","JavaScriptArticle","BootstrapArticle","jQueryArticle","ReactArticle"];
 			function Load(){
-				// var PageNumber=1;
-				// document.getElementById("LPage").innerText=PageNumber-1;
-				// document.getElementById("CPage").innerText=PageNumber;
-				// document.getElementById("NPage").innerText=PageNumber+1;
+				document.getElementById(ArticleArray[0]).style.display='block';
+				document.getElementById(ArticleArray[1]).style.display='block';
+				document.getElementById(ArticleArray[2]).style.display='block';
+
 			}
 			function ReadMoreClicked(readMore){
 				var clickedArticle=readMore.id;
 				localStorage.setItem("Article",clickedArticle);
 			}
+			function ChangePage(pagItem){
+				document.getElementById(ArticleArray[3*PageNumber-3]).style.display='none';
+				document.getElementById(ArticleArray[3*PageNumber-2]).style.display='none';
+				document.getElementById(ArticleArray[3*PageNumber-1]).style.display='none';
+					if(pagItem.id=="NPage"){
+						if(PageNumber<MaxPage){
+						PageNumber++;
+						document.getElementById("LPage").innerText=PageNumber-1;
+						document.getElementById("CPage").innerText=PageNumber;
+						document.getElementById("NPage").innerText=PageNumber+1;
+						}
+					}
+					else if(pagItem.id=="LPage"){
+						PageNumber--;
+						document.getElementById("LPage").innerText=PageNumber-1;
+						document.getElementById("CPage").innerText=PageNumber;
+						document.getElementById("NPage").innerText=PageNumber+1;
+					}
 
+					if(PageNumber>1) document.getElementById("LPage").style.display='block';
+					else document.getElementById("LPage").style.display='none';
+					if(PageNumber==MaxPage) document.getElementById("NPage").style.display='none';
+					else document.getElementById("NPage").style.display='block';
+
+
+				document.getElementById(ArticleArray[3*PageNumber-3]).style.display='block';
+				document.getElementById(ArticleArray[3*PageNumber-2]).style.display='block';
+				document.getElementById(ArticleArray[3*PageNumber-1]).style.display='block';	
+
+			}
 		</script>
 	</head>
 	
@@ -46,48 +78,82 @@
 			<div class="row">
 				<div class="col-md-8">
 					<h4 class="mt-5 mb-3">Web Programing</h4>
-					<div class="card mb-4">
+					<div class="card mb-4" id="HTMLArticle" style="display: none;">
 						<img src="img/HTML.jpg" class="card-img-top">
 						<div class="card-body">
 							<h5 class="card-title">HTML</h5>
 							<p class="card-text">The HyperText Markup Language or HTML is the standard markup language for documents designed to be displayed in a web browser. It can be assisted by technologies such as Cascading Style Sheets and scripting languages such as JavaScript.</p>
-							<a href="single.html" class="btn btn-info" style="float: right;" id="HTML" onclick="ReadMoreClicked(this)">Read more</a>
+							<a href="single.html" class="btn btn-info" style="float: right;" id="HTML" onclick="ReadMoreClicked(this)">Read more</a></br>
 						</div>
 						<div class="card-footer text-muted">
 							Published : 26 March 2021
 						</div>
 					</div>
-					<div class="card mb-4">
+					<div class="card mb-4" id="CSSArticle" style="display: none;">
 						<img src="img/css.jpg" class="card-img-top">
 						<div class="card-body">
 							<h5 class="card-title">CSS</h5>
 							<p class="card-text">Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
-							<a href="single.html" class="btn btn-info" style="float: right;"  id="CSS" onclick="ReadMoreClicked(this)">Read more</a>
+							<a href="single.html" class="btn btn-info" style="float: right;"  id="CSS" onclick="ReadMoreClicked(this)">Read more</a></br>
 						</div>
 						<div class="card-footer text-muted">
 							Published : 26 March 2021
 						</div>
 					</div>
-					<div class="card mb-4">
+					<div class="card mb-4" id="JavaScriptArticle" style="display: none;">
 						<img src="img/javascript.jpg" class="card-img-top">
 						<div class="card-body">
 							<h5 class="card-title">JavaScript</h5>
 							<p class="card-text">JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. Over 97% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries.</p>
-								<a href="single.html" class="btn btn-info" style="float: right;" id="JavaScript" onclick="ReadMoreClicked(this)">Read more</a>
+								<a href="single.html" class="btn btn-info" style="float: right;" id="JavaScript" onclick="ReadMoreClicked(this)">Read more</a></br>
 						</div>
 						<div class="card-footer text-muted">
 							Published : 26 March 2021
 						</div>
 					</div>
+					<div class="card mb-4" id="BootstrapArticle" style="display: none;">
+						<img src="img/Bootstrap.jpg" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">Bootstrap</h5>
+							<p class="card-text">Bootstrap is a free and open-source CSS framework directed at responsive, mobile-first front-end web development. It contains HTML, CSS and JavaScript-based design templates for typography, forms, buttons, navigation, and other interface components.</p>
+								<a href="single.html" class="btn btn-info" style="float: right;" id="Bootstrap" onclick="ReadMoreClicked(this)">Read more</a></br>
+						</div>
+						<div class="card-footer text-muted">
+							Published : 31 March 2021
+						</div>
+					</div>
+					<div class="card mb-4" id="jQueryArticle" style="display: none;">
+						<img src="img/jQuery.jpg" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">jQuery</h5>
+							<p class="card-text">jQuery is a JavaScript library designed to simplify HTML DOM tree traversal and manipulation, as well as event handling, CSS animation, and Ajax. It is free, open-source software using the permissive MIT License. As of May 2019, jQuery is used by 73% of the 10 million most popular websites.</p>
+								<a href="single.html" class="btn btn-info" style="float: right;" id="jQuery" onclick="ReadMoreClicked(this)">Read more</a></br>
+						</div>
+						<div class="card-footer text-muted">
+							Published : 31 March 2021
+						</div>
+					</div>
+					<div class="card mb-4" id="ReactArticle" style="display: none;">
+						<img src="img/React.jpg" class="card-img-top">
+						<div class="card-body">
+							<h5 class="card-title">React</h5>
+							<p class="card-text">React is a free and open-source front-end JavaScript library for building user interfaces based on UI components. It is maintained by Meta and a community of individual developers and companies.</p>
+								<a href="single.html" class="btn btn-info" style="float: right;" id="React" onclick="ReadMoreClicked(this)">Read more</a></br>
+						</div>
+						<div class="card-footer text-muted">
+							Published : 31 March 2021
+						</div>
+					</div>
+
 					<ul class="pagination justify-content-center mb-4">
 						<li class="page-item">
-							<a class="page-link" id="LPage" style="display: none;"></a>
+							<a class="page-link" id="LPage" style="display: none;" onclick="ChangePage(this)"></a>
 						</li>
 						<li class="page-item">
-							<a class="page-link" id="CPage">1</a>
+							<a class="page-link" id="CPage"style="background:lightgray;" onclick="ChangePage(this)">1</a>
 						</li>
 						<li class="page-item">
-							<a class="page-link" id="NPage">2</a>
+							<a class="page-link" id="NPage" onclick="ChangePage(this)">2</a>
 						</li>
 					</ul>
 				</div>
@@ -104,32 +170,29 @@
 						</div>
 					</div>
 					<div class="card my-5">
-						<h5 class="card-header">Category</h5>
+						<h5 class="card-header">Categories</h5>
 						<div class="card-body">
 							<div class="row">
 								<ul class="list-unstyled mb-0 ml-3">
 									<li>
-										<a href="#">HTML</a>
+										<a href="#">Front-end</a>
 									</li>
 									<li>
-										<a href="#">CSS</a>
+										<a href="#">Back-end</a>
 									</li>
 									<li>
-										<a href="#">JavaScript</a>
-									</li>
-									<li>
-										<a href="#">JQuery</a>
+										<a href="#">Fullstack</a>
 									</li>
 								</ul>
 								<ul class="list-unstyled mb-0 ml-4">
 									<li>
-										<a href="#">PHP</a>
+										<a href="#">UI/UX Design</a>
 									</li>
 									<li>
 										<a href="#">Wordpress</a>
 									</li>
 									<li>
-										<a href="#">Golang</a>
+										<a href="#">Software</a>
 									</li>
 								</ul>
 							</div>
